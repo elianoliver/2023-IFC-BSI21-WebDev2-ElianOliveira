@@ -1,0 +1,128 @@
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+* {
+    box-sizing: border-box;
+    color: white;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+    padding: 30px;
+    color: white;
+    background-image: url("img/background2.jpg");
+    backdrop-filter: blur(20px);
+    background-position: center;
+    background-size: cover;
+}
+
+.app {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.189);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.pending {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    &::before {
+        font-family: "Material Symbols Outlined";
+        content: "autorenew";
+        color: #f1c40f;
+        animation: spin 2s linear infinite;
+    }
+}
+
+.synced {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+
+    &::before {
+        font-family: "Material Symbols Outlined";
+        content: "check_circle";
+        color: #2ecc71;
+    }
+}
+
+.error {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    &::before {
+        font-family: "Material Symbols Outlined";
+        content: "error";
+        color: #e74c3c;
+    }
+}
+
+.input-action {
+    width: 100%;
+}
+
+.input-action::placeholder {
+    color: rgba(255, 255, 255, 0.504);
+}
+
+ul{
+    width: 100%;
+    padding: 0;
+}
+
+li {
+    width: 100%;
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+}
+
+.input-action,
+li>*{
+    font-size: 1.2rem;
+    padding: .2rem 1rem;
+    background-color: transparent;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.281);
+    position: relative;
+    overflow: hidden;
+    outline: none;
+}
+
+li button {
+    cursor: pointer;
+    color: black;
+    background-color: white;
+    flex-grow: 0;
+}
+
+li input{
+    flex-grow: 12;
+}
+
+li input + span {
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 0;
+}
